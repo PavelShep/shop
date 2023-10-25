@@ -23,13 +23,14 @@ $isAuthenticated = isset($_SESSION['admin']);
 				<div class="wrapper-inside">
 					<div class="visible-elements">
 						<span>Główna</span>
-						<span>Nowy rok</span>
-						<span>Bożenarodzenie</span>
+						<span>Nowy Rok</span>
+						<span>Boże Narodzenie</span>
 						<span>Promocje</span>
 						<?php if ($isAuthenticated): ?>
-							<span>Dodać przedmiot</span>
+							<span><a href="add_item_form.php" style="color: #fff; text-decoration: none;">Dodać przedmiot</a></span>
 							<span>Usunąć przedmiot</span>
 							<span>Aktualizować przedmiot</span>
+							<span><a href="exportData.php" style="color: #fff; text-decoration: none;">Export CSV</a></span>
 							<span><a href="logout.php">Log out</a></span>
 						<?php else: ?>
 							<span><a href="login_form.php">Log in</a></span>
@@ -68,18 +69,13 @@ $isAuthenticated = isset($_SESSION['admin']);
 				<?php endforeach ?>
 			</div>
 		</section>
-		<div class="col-md-12 head">
-			<div class="float-right">
-				<a href="exportData.php" class="btn btn-primary"><i class="exp"></i> Export</a>
-			</div>
-    	</div>
 		<footer>
 			2023 © Szczęśliwego Nowego Roku!
 		</footer>
 	</div>
 	<div class="overlay js_overlay"></div>
 	<div class="popup">
-		<h3>Składając zamówienie</h3><i class="fas fa-times close-popup js_close-popup"></i>
+		<h3>Zamówienie</h3><i class="fas fa-times close-popup js_close-popup"></i>
 		<div class='js_error'></div>
 		<input type="hidden" name="product-id">
 		<input type="text" name="fio" placeholder="Twoje imię">
