@@ -1,3 +1,7 @@
+<?php
+session_start();
+$isAuthenticated = isset($_SESSION['admin']);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,10 +26,14 @@
 						<span>Nowy rok</span>
 						<span>Bożenarodzenie</span>
 						<span>Promocje</span>
-						<span>Płatności</span>
-						<span>Dostawa</span>
-						<span>Opinie</span>
-						<span>O sklepie</span>
+						<?php if ($isAuthenticated): ?>
+							<span>Dodać przedmiot</span>
+							<span>Usunąć przedmiot</span>
+							<span>Aktualizować przedmiot</span>
+							<span><a href="logout.php">Log out</a></span>
+						<?php else: ?>
+							<span><a href="login_form.php">Log in</a></span>
+						<?php endif; ?>
 					</div>
 				</div>
 			</nav>
