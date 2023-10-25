@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Интернет-магазин новогодней и рождественской атрибутики</title>
+	<title>Sklep internetowy z artykułami noworocznymi i bożonarodzeniowymi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 	<link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -18,14 +18,14 @@
 				<i class="fas fa-times close-mobile-menu js_close_mobile_menu"></i>
 				<div class="wrapper-inside">
 					<div class="visible-elements">
-						<span>Главная</span>
-						<span>Новый год</span>
-						<span>Рождество</span>
-						<span>Акции</span>
-						<span>Оплата</span>
-						<span>Доставка</span>
-						<span>Отзывы</span>
-						<span>О магазине</span>
+						<span>Główna</span>
+						<span>Nowy rok</span>
+						<span>Bożenarodzenie</span>
+						<span>Promocje</span>
+						<span>Płatności</span>
+						<span>Dostawa</span>
+						<span>Opinie</span>
+						<span>O sklepie</span>
 					</div>
 				</div>
 			</nav>
@@ -33,28 +33,28 @@
 				<div class="nav-left"><i class="fas fa-chevron-left"></i></div>
 				<div class="slider">
 					<div style="background: url('static/img/slide-1.jpg') no-repeat; background-size: auto 100%; background-position: center; background-position-y: 0;">
-						<span class="text-box">Новогодние игрушки со скидкой в 30%</span>
+						<span class="text-box">Zabawki noworoczne z 30% rabatem</span>
 					</div>
 					<div style="background: url('static/img/slide-2.jpg') no-repeat; background-size: auto 100%; background-position: center; background-position-y: 0;">
-						<span class="text-box">Большой выбор рождественских венков</span>
+						<span class="text-box">Duży wybór wianków bożonarodzeniowych</span>
 					</div>
 					<div style="background: url('static/img/slide-3.jpg') no-repeat; background-size: auto 100%; background-position: center; background-position-y: 0;">
-						<span class="text-box">Подари ребёнку праздник, пригласите Деда Мороза!</span>
+						<span class="text-box">Podaruj swojemu dziecku wakacje, zaproś Świętego Mikołaja!</span>
 					</div>
 				</div>
 				<div class="nav-right"><i class="fas fa-chevron-right"></i></div>
 			</div>
 		</header>
 		<section class="product-box">
-			<h2>Каталог</h2>
+			<h2>Katalog</h2>
 			<div class="row">
 				<?php foreach ($products as $product): ?>
 					<div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 product-parent" data-id="<?=$product['id']?>">
 						<div class="product">
 							<div class="product-pic" style="background: url('<?=$product['image']?>') no-repeat; background-size: auto 100%; background-position: center"></div>
 							<span class="product-name"><?=$product['name']?></span>
-							<span class="product_price"><?=$product['price']?> руб.</span>
-							<button class="js_buy">Купить</button>
+							<span class="product_price"><?=$product['price']?> zł</span>
+							<button class="js_buy">Kupić</button>
 						</div>
 					</div>
 				<?php endforeach ?>
@@ -66,19 +66,19 @@
 			</div>
     	</div>
 		<footer>
-			2019 © С новым годом!
+			2023 © Szczęśliwego Nowego Roku!
 		</footer>
 	</div>
 	<div class="overlay js_overlay"></div>
 	<div class="popup">
-		<h3>Оформление заказа</h3><i class="fas fa-times close-popup js_close-popup"></i>
+		<h3>Składając zamówienie</h3><i class="fas fa-times close-popup js_close-popup"></i>
 		<div class='js_error'></div>
 		<input type="hidden" name="product-id">
-		<input type="text" name="fio" placeholder="Ваше имя">
-		<input type="text" name="phone" placeholder="Телефон">
+		<input type="text" name="fio" placeholder="Twoje imię">
+		<input type="text" name="phone" placeholder="Telefon">
 		<input type="text" name="email" placeholder="e-mail">
-		<textarea placeholder="Комментарий" name="comment"></textarea>
-		<button class="js_send">Отправить</button>
+		<textarea placeholder="Komentarz" name="comment"></textarea>
+		<button class="js_send">Wysłać</button>
 	</div>
 
 	<script src="static/js/jquery-3.4.1.min.js"></script>
