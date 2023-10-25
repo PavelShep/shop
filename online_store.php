@@ -60,6 +60,11 @@
 				<?php endforeach ?>
 			</div>
 		</section>
+		<div class="col-md-12 head">
+			<div class="float-right">
+				<a href="exportData.php" class="btn btn-primary"><i class="exp"></i> Export</a>
+			</div>
+    	</div>
 		<footer>
 			2019 © С новым годом!
 		</footer>

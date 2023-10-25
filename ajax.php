@@ -30,6 +30,10 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])
 
 		$set = $PDO->PDO->prepare($sql);
 		$response['res'] = $set->execute($requestData);
+
+		// Mailer can be added here
+
+		// ...
 	}
 
 	echo json_encode($response);
