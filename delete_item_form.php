@@ -9,7 +9,7 @@
         <h2>Usuń pozycję</h2>
         <div class="form-group">
             <label for="item_id">Identyfikator pozycji:</label>
-            <input type="text" class="form-control" id="item_id" name="item_id" required><br>
+            <input type="text" class="form-control" id="item_id" name="item_id" required>
         </div>
         <button type="submit" class="btn btn-primary">Usuń</button>
     </form>
