@@ -17,7 +17,7 @@ Key features of this project include:
 - Admin panel for product
 
 ## Demo
-You can see a live demo of this page [here](newyearshop2023.000webhostapp.com/). <br>
+You can see a live demo of this page [here](https://newyearshop2023.000webhostapp.com/). <br>
 <b>WARNING!!!</b> <br>
 The website does not have an ssl certificate!!!
 
