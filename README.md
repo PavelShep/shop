@@ -11,10 +11,10 @@ It offers a user-friendly interface, product catalog. Administrators can also ma
 
 Key features of this project include:
 
-- User registration and authentication
+- Admin authentication
 - Product catalog with detailed descriptions
 - Responsive design with Bootstrap 4
-- Admin panel for product and user management
+- Admin panel for product 
 
 ## Technologies Used
 
@@ -33,7 +33,7 @@ To run the project locally or explore the source code, follow these steps:
 
 1. **Clone the Repository**: `git clone https://github.com/PavelShep/shop`
 
-2. **Set Up the Database**: Import the included SQL file to create the necessary database tables.
+2. **Set Up the Database**: Import the included SQL files(happynewyear.sql and goods.sql) to create the necessary database tables.
 
 3. **Configuration**: Update the database connection settings in the configuration files to match your environment.
 
@@ -47,7 +47,7 @@ To deploy this project on a web hosting service:
 
 1. Upload the project files to your hosting server.
 
-2. Create a new database and import the SQL file to set up the database schema.
+2. Create a new database and import the SQL files(happynewyear.sql and goods.sql) to set up the database schema.
 
 3. Update the database connection settings in the configuration files to match your hosting environment.
 
