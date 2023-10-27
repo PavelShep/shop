@@ -124,7 +124,7 @@ happyNewYear = {
 		      	}
 		      } else {
 		      	if (response.res == true) {
-		      		errorsBlock.html('Заказ оформлен!');
+		      		errorsBlock.html('Zamówienie zostało zrealizowane!');
 		      	}
 		      }
 			}

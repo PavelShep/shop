@@ -11,13 +11,13 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])
 	$errors = array();
 
 	if (!$requestData['id'])
-		$errors[] = 'Не получен ID товара';
+		$errors[] = 'Nie otrzymano identyfikatora produktu';
 
 	if (!$requestData['fio'])
-		$errors[] = 'Поле "Ваше имя" обязательно для заполнения';
+		$errors[] = 'Pole „Twoje imię” jest wymagane';
 
 	if (!$requestData['phone'] && !$requestData['email'])
-		$errors[] = 'Вы должны заполнить как минимум одно поле "Телефон" или "Email"';
+		$errors[] = 'Musisz wypełnić przynajmniej jedno pole „Telefon” lub „E-mail”';
 
 	$response = array();
 

@@ -27,6 +27,7 @@ $isAuthenticated = isset($_SESSION['admin']);
 						<span>Boże Narodzenie</span>
 						<span>Promocje</span>
 						<?php if ($isAuthenticated): ?>
+							<span><a href="orders.php" style="color: #fff; text-decoration: none;">Zamówienia</a></span>
 							<span><a href="add_item_form.php" style="color: #fff; text-decoration: none;">Dodać towar</a></span>
 							<span><a href="delete_item_form.php" style="color: #fff; text-decoration: none;">Usunąć towar</a></span>
 							<span><a href="update_item_form.php" style="color: #fff; text-decoration: none;">Aktualizować dane towaru</a></span>
