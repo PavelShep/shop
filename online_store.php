@@ -33,6 +33,7 @@ $isAuthenticated = isset($_SESSION['admin']);
 							<span><a href="update_item_form.php" style="color: #fff; text-decoration: none;">Aktualizować dane towaru</a></span>
 							<span><a href="show_items.php" style="color: #fff; text-decoration: none;">Pokaż wszystkie towary</a></span>
 							<span><a href="exportData.php" style="color: #fff; text-decoration: none;">Export CSV</a></span>
+							<span><a href="importData_form.php" style="color: #fff; text-decoration: none;">Import CSV</a></span>
 							<span><a href="logout.php">Log out</a></span>
 						<?php else: ?>
 							<span><a href="login_form.php">Log in</a></span>

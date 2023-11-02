@@ -19,10 +19,10 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $imagePath)) {
         header('Location: index.php');
 
     } catch (PDOException $e) {
-        echo "Ошибка: " . $e->getMessage();
+        echo "Błąd: " . $e->getMessage();
     }
 } else {
-    echo "Ошибка при загрузке изображения.";
+    echo "Błąd ładowania obrazu.";
 }
 
 ?>
