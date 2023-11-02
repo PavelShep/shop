@@ -7,7 +7,7 @@ During development, XAMPP was used for local testing, and the final version has 
 ## Project Description
 
 The University E-Commerce Project is an online shopping platform that enables users to browse, shop, and manage their purchases. 
-It offers a user-friendly interface, product catalog. Administrators can also manage products and orders via the admin panel.
+It offers a user-friendly interface, product catalog. Administrators can also manage products and orders via the admin panel, import and export CSV.
 
 Key features of this project include:
 
