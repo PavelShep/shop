@@ -15,7 +15,8 @@ if (isset($_POST["submit"])) {
         $csvFile = $_FILES["csv_file"]["tmp_name"];
 
         if (($handle = fopen($csvFile, "r")) !== FALSE) {
-            $stmt = $db->PDO->prepare("INSERT INTO goods (id, name, price, image) VALUES (?, ?, ?, ?)");
+            $stmt = $db->PDO->prepare("INSERT INTO goods (id, name, price, image) VALUES (?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE name = VALUES(name), price = VALUES(price), image = VALUES(image)");
             if (!$stmt) {
                 die("Błąd podczas przygotowywania zapytania SQL: " . $db->PDO->errorInfo()[2]);
             }
