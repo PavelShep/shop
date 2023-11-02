@@ -21,6 +21,8 @@ if (isset($_POST["submit"])) {
                 die("Błąd podczas przygotowywania zapytania SQL: " . $db->PDO->errorInfo()[2]);
             }
 
+            $existingIds = []; // Список существующих ID
+
             // Пропустить первую строку (заголовки) ";" - это разделитель
             fgetcsv($handle, 1000, ";");
 
@@ -29,21 +31,28 @@ if (isset($_POST["submit"])) {
                 $name = $data[1];
                 $price = $data[2];
                 $image = $data[3];
+                $existingIds[] = $id; // Добавить ID в список существующих
 
                 // Привязываем значения к параметрам в SQL-запросе и выполняем запрос
                 if (!$stmt->execute([$id, $name, $price, $image])) {
-                    die("Błąd wstawiania danych: " . $stmt->errorInfo()[2]);
+                    die("Błąd wstawiania/aktualizowania danych: " . $stmt->errorInfo()[2]);
                 }
             }
 
             fclose($handle); // Закрываем CSV файл
+
+            // Удаляем записи, которых нет в импортированном CSV
+            $existingIdsStr = implode(',', $existingIds);
+            $deleteSql = "DELETE FROM goods WHERE id NOT IN ($existingIdsStr)";
+            $db->PDO->exec($deleteSql);
+
             echo "Dane zostały pomyślnie zaimportowane do tabeli towarów.";
-            //header('Location: index.php');
+            header('Location: index.php');
         } else {
-            echo "Ошибка при открытии CSV файла.";
+            echo "Błąd podczas otwierania pliku CSV.";
         }
     } else {
-        echo "Пожалуйста, выберите CSV файл для импорта.";
+        echo "Wybierz plik CSV do zaimportowania.";
     }
 }
 
