@@ -14,12 +14,11 @@
         //Create a PDO connection
         $db = PdoConnect::getInstance();
 
-        // Przygotuj zapytanie SQL do wyświetlenia wszystkich rekordów z tabeli goods
         $sql = "SELECT * FROM orders";
         $stmt = $db->PDO->query($sql);
 
         echo "<div class='container'>";
-        echo "<h3 align='center'>Zawartość tabeli 'orders'</h3>";
+        echo "<h3 align='center'>Zamówienia</h3>";
         // Wyświetl dane z tabeli
         echo "<table class='table table-bordered'>
         <tr>

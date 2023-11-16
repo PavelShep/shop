@@ -15,15 +15,15 @@ if (isset($_POST["submit"])) {
         $csvFile = $_FILES["csv_file"]["tmp_name"];
 
         if (($handle = fopen($csvFile, "r")) !== FALSE) {
-            $stmt = $db->PDO->prepare("INSERT INTO goods (id, name, price, image) VALUES (?, ?, ?, ?)
-            ON DUPLICATE KEY UPDATE name = VALUES(name), price = VALUES(price), image = VALUES(image)");
+            $stmt = $db->PDO->prepare("INSERT INTO goods (id, name, price, image, opis, kategoria, liczba_sztuk, kraj, kod_pocztowy, stan) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON DUPLICATE KEY UPDATE name = VALUES(name), price = VALUES(price), image = VALUES(image), opis = VALUES(opis), kategoria = VALUES(kategoria), liczba_sztuk = VALUES(liczba_sztuk), kraj = VALUES(kraj), kod_pocztowy = VALUES(kod_pocztowy), stan = VALUES(stan)");
             if (!$stmt) {
                 die("Błąd podczas przygotowywania zapytania SQL: " . $db->PDO->errorInfo()[2]);
             }
 
-            $existingIds = []; // Список существующих ID
+            $existingIds = []; // List of existing IDs
 
-            // Пропустить первую строку (заголовки) ";" - это разделитель
+            // Skip first line (headers) ";" is a separator
             fgetcsv($handle, 1000, ";");
 
             while (($data = fgetcsv($handle, 1000, ";")) !== FALSE) {
@@ -31,17 +31,23 @@ if (isset($_POST["submit"])) {
                 $name = $data[1];
                 $price = $data[2];
                 $image = $data[3];
-                $existingIds[] = $id; // Добавить ID в список существующих
+                $opis = $data[4]; 
+                $kategoria = $data[5]; 
+                $liczba_sztuk = $data[6]; 
+                $kraj = $data[7];
+                $kod_pocztowy = $data[8];
+                $stan = $data[9];
+                $existingIds[] = $id; // Add ID to the list of existing ones
 
-                // Привязываем значения к параметрам в SQL-запросе и выполняем запрос
-                if (!$stmt->execute([$id, $name, $price, $image])) {
+                // Bind the values to the parameters in the SQL query and execute the query
+                if (!$stmt->execute([$id, $name, $price, $image, $opis, $kategoria, $liczba_sztuk, $kraj, $kod_pocztowy, $stan])) {
                     die("Błąd wstawiania/aktualizowania danych: " . $stmt->errorInfo()[2]);
                 }
             }
 
-            fclose($handle); // Закрываем CSV файл
+            fclose($handle); // Close the CSV file
 
-            // Удаляем записи, которых нет в импортированном CSV
+            // Remove records that are not in the imported CSV
             $existingIdsStr = implode(',', $existingIds);
             $deleteSql = "DELETE FROM goods WHERE id NOT IN ($existingIdsStr)";
             $db->PDO->exec($deleteSql);
@@ -56,7 +62,7 @@ if (isset($_POST["submit"])) {
     }
 }
 
-// Закрываем подготовленный запрос и соединение с базой данных
+// Close the prepared query and the database connection
 $stmt = null;
 $conn = null;
 ?>

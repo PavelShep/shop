@@ -22,7 +22,30 @@
             <label for="new_price">Nowa cena produktu:</label>
             <input type="text" class="form-control" id="new_price" name="new_price" required>
         </div>
-
+        <div class="form-group">
+            <label for="new_opis">Nowy opis</label>
+            <input type="text" class="form-control" id="new_opis" name="new_opis" placeholder="" required>
+        </div>
+        <div class="form-group">
+            <label for="new_kategoria">Nowa kategoria</label>
+            <input type="text" class="form-control" id="new_kategoria" name="new_kategoria" placeholder="" required>
+        </div>
+        <div class="form-group">
+            <label for="new_liczba_sztuk">Nowa liczba sztuk</label>
+            <input type="text" class="form-control" id="new_liczba_sztuk" name="new_liczba_sztuk" placeholder="" required>
+        </div>
+        <div class="form-group">
+            <label for="new_kraj">Kraj</label>
+            <input type="text" class="form-control" id="new_kraj" name="new_kraj" placeholder="" required>
+        </div>
+        <div class="form-group">
+            <label for="new_kod_pocztowy">Kod Pocztowy</label>
+            <input type="text" class="form-control" id="new_kod_pocztowy" name="new_kod_pocztowy" placeholder="" required>
+        </div>
+        <div class="form-group">
+            <label for="new_stan">Stan</label>
+            <input type="text" class="form-control" id="new_stan" name="new_stan" placeholder="" required>
+        </div>
         <button type="submit" class="btn btn-primary">Aktualizuj</button>
     </form>
 </body>

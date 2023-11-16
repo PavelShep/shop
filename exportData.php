@@ -8,7 +8,7 @@ spl_autoload_register(function ($class) {
 $db = PdoConnect::getInstance();
 
 // Define your SQL query to retrieve data from the database
-$sql = "SELECT id, name, price, image FROM goods"; // Replace 'your_table' with your actual table name
+$sql = "SELECT * FROM goods"; 
 
 try {
     $stmt = $db->PDO->prepare($sql);
@@ -19,7 +19,7 @@ try {
     $file = fopen($csvFile, 'w');
 
     // Write a header row to the CSV
-    $header = array('id', 'name', 'price', 'image'); // Replace with your column names
+    $header = array('id', 'name', 'price', 'image', 'opis', 'kategoria', 'liczba_sztuk', 'kraj', 'kod_pocztowy', 'stan'); 
     fputcsv($file, $header);
 
     // Fetch and write data rows to the CSV

@@ -4,16 +4,33 @@ spl_autoload_register(function ($class) {
 });
 $itemName = $_POST['name'];
 $itemPrice = $_POST['price'];
+$itemOpis = $_POST['opis'];
+$itemKategoria = $_POST['kategoria'];
+$itemLiczba_sztuk = $_POST['liczba_sztuk'];
+$itemKraj = $_POST['kraj'];
+$itemKod_pocztowy = $_POST['kod_pocztowy'];
+$itemStan = $_POST['stan'];
 
-// Обработка загрузки изображения
-$imagePath = 'static/img/' . $_FILES['image']['name']; // Путь для сохранения изображения
+// Process image loading
+$imagePath = 'static/img/' . $_FILES['image']['name']; // Path to save the image
 
 if (move_uploaded_file($_FILES['image']['tmp_name'], $imagePath)) {
     try {
         //Create a PDO connection
         $db = PdoConnect::getInstance();
 
-        $sql = "INSERT INTO goods (name, price, image) VALUES ('$itemName', '$itemPrice', '$imagePath')";
+        $sql = "INSERT INTO goods (name, price, image, opis, kategoria, liczba_sztuk, kraj, kod_pocztowy, stan) 
+            VALUES 
+            ('$itemName', 
+            '$itemPrice', 
+            '$imagePath', 
+            '$itemOpis', 
+            '$itemKategoria',
+            '$itemLiczba_sztuk',
+            '$itemKraj',
+            '$itemKod_pocztowy',
+            '$itemStan')";
+            
         $stmt = $db->PDO->query($sql);
 
         header('Location: index.php');

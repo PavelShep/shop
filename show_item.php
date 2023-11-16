@@ -37,9 +37,6 @@ if (isset($_GET['product_id'])) {
         $productInfo = $stmt->fetch();
 
         // Display product information
-        // echo '<h2>' . $productInfo['name'] . '</h2>';
-        // echo '<p>' . $productInfo['price'] . '</p>';
-        // echo '<img src="' . $productInfo['image'] . '" alt="Photo">';
         echo '
         <div class="container mt-5">
             <div class="row">
@@ -48,7 +45,7 @@ if (isset($_GET['product_id'])) {
                 </div>
                 <div class="col-md-6">
                     <h2>'. $productInfo['name'] . '</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
+                    <p class="lead">' . $productInfo['opis'] . '</p>
                     <p class="font-weight-bold">Cena: ' . $productInfo['price'] . 'zł</p>
                 </div>
             </div>

@@ -1,17 +1,15 @@
-INSERT INTO goods (`name`, `price`, `image`)
+INSERT INTO `goods` (`id`, `name`, `price`, `image`, `opis`, `kategoria`, `liczba_sztuk`, `kraj`, `kod_pocztowy`, `stan`) 
 VALUES
-('Czekoladowy Mikołaj', '10', 'static/img/product-2.png'),
-('Drzewko świąteczne', '99', 'static/img/product-3.jpg'),
-('Słodka skrzyneczka', '60', 'static/img/product-4.jpg'),
-('Figurka Świętego Mikołaja', '200', 'static/img/product-5.jpg'),
-('Bal noworoczny', '30', 'static/img/product-6.jpg'),
-('Piłka choinkowa', '30', 'static/img/product-7.jpg'),
-('Miszura', '12', 'static/img/product-8.jpg'),
-('Girlanda', '12', 'static/img/product-9.jpg'),
-('Szampan noworoczny', '24', 'static/img/product-10.jpg'),
-('Pudełko cukierków', '25', 'static/img/product-11.jpg'),
-('Prezent', '90', 'static/img/product-12.jpg'),
-('Звезда на Елку', '40', 'static/img/product-13.jpg'),
-('Noworoczna czapka', '60', 'static/img/product-14.jpg'),
-('Sparklery', '10', 'static/img/product-15.jpg'),
-('Petarda', '80', 'static/img/product-16.png')
+(4, 'Drzewko świąteczne', '99', 'static/img/product-3.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(5, 'Słodka skrzyneczka', '60', 'static/img/product-4.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(6, 'Figurka Świętego Mikołaja', '200', 'static/img/product-5.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(7, 'Bal noworoczny', '30', 'static/img/product-6.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(8, 'Piłka choinkowa', '30', 'static/img/product-7.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(9, 'Miszura', '12', 'static/img/product-8.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(10, 'Girlanda', '12', 'static/img/product-9.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(11,'Szampan noworoczny', '24', 'static/img/product-10.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(12, 'Pudełko cukierków', '25', 'static/img/product-11.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(13, 'Prezent', '90', 'static/img/product-12.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(14, 'Noworoczna czapka', '60', 'static/img/product-14.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(15, 'Sparklery', '10', 'static/img/product-15.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy'),
+(16, 'Petarda', '80', 'static/img/product-16.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.', 'supermarket', '12', 'Polska', '66-400', 'Nowy')

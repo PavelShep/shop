@@ -136,7 +136,7 @@ try {
     fputcsv($csvFile, $csvHeaders);
 
     // SQL query to select data from your table
-    $sql = "SELECT id, name, price, image FROM goods";
+    $sql = "SELECT * FROM goods";
     $stmt = $conn->PDO->prepare($sql);
     $stmt->execute();
 
@@ -150,6 +150,12 @@ try {
                 case 'ID produktu':
                     $csvData[] = $row['id'];
                     break;
+                case 'Kategoria główna':
+                    $csvData[] = $row['kategoria'];
+                    break;
+                case 'Liczba sztuk':
+                    $csvData[] = $row['liczba_sztuk'];
+                    break;    
                 case 'Tytuł oferty':
                     $csvData[] = $row['name'];
                     break;
@@ -158,6 +164,18 @@ try {
                     break;
                 case 'Zdjęcia':
                     $csvData[] = $row['image'];
+                    break;
+                case 'Opis oferty':
+                    $csvData[] = $row['opis'];
+                    break;
+                case 'Kraj':
+                    $csvData[] = $row['kraj'];
+                    break;
+                case 'Kod pocztowy':
+                    $csvData[] = $row['kod_pocztowy'];
+                    break;
+                case 'Stan':
+                    $csvData[] = $row['stan'];
                     break;
                 default:
                     $csvData[] = ''; // Leave empty if the column doesn't exist in the database
