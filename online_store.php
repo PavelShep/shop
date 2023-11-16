@@ -68,6 +68,7 @@ $isAuthenticated = isset($_SESSION['admin']);
 							<span class="product-name"><?=$product['name']?></span>
 							<span class="product_price"><?=$product['price']?> zł</span>
 							<button class="js_buy">Kupić</button>
+							<button class="show_product" data-product-id="<?=$product['id']?>">Więcej</button>
 						</div>
 					</div>
 				<?php endforeach ?>

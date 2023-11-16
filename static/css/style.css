@@ -273,7 +273,21 @@ section.product-box .product .product-name {
 	margin-bottom: 5px;
 }
 
-.product button {
+.product button.js_buy {
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	width: 66%;
+	margin-left: -33%;
+	background: var(--main-color-1);
+	border: none;
+	text-transform: uppercase;
+	padding: 10px 30px 10px 30px;
+	color: white;
+	display: none;
+}
+
+.product button.show_product {
 	position: absolute;
 	top: 35%;
 	left: 50%;

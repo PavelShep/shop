@@ -161,6 +161,7 @@ $(document)
 	.on('click', '.js_mobile_menu_open_button', function() { wideMenu.showHideMobile() })
 	.on('click', '.js_close_mobile_menu', function() { wideMenu.showHideMobile() })
 	.on('click', '.js_buy', function () { happyNewYear.showPopup(true, this) })
+	.on('click', '.show_product', function () { let productId = $(this).data('product-id'); window.location.href = "show_item.php?product_id=" + productId; })
 	.on('click', '.js_close-popup', function () { happyNewYear.showPopup(false) })
 	.on('click', '.js_overlay', function () { happyNewYear.showPopup(false) })
 	.on('click', '.js_send', function () { happyNewYear.sendOrder(); });
