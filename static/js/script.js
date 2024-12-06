@@ -77,60 +77,56 @@ wideMenu = {
 };
 
 happyNewYear = {
-	showPopup : (param, element) => {
+    showPopup: (param, element) => {
+        let main_element = $('.popup'),
+            overlay_element = $('.overlay');
 
-		let main_element	= $('.popup'),
-			overlay_element = $('.overlay');
+        if (param) {
+            let product_element = $(element);
 
-		if (param) {
-			let product_element = $(element);
+            main_element.find('[name=product-id]').val(product_element.parents('.product-parent').data('id'));
 
-			main_element.find('[name=product-id]').val(product_element.parents('.product-parent').data('id'));
+            main_element.show();
+            overlay_element.show();
+        } else {
+            main_element.hide();
+            overlay_element.hide();
+        }
+    },
 
-			main_element.show();
-			overlay_element.show();
-		} else {
-			main_element.hide();
-			overlay_element.hide();
-		}
-	},
+    sendOrder: () => {
+        let url = 'ajax.php',
+            data = {
+                'id': $('[name=product-id]').val(),
+                'fio': $('[name=fio]').val(),
+                'phone': $('[name=phone]').val(),
+                'comment': $('[name=comment]').val(),
+            };
 
-	sendOrder : () => {
+        $.ajax({
+            url: url,
+            type: "POST",
+            data: data,
+            dataType: 'json',
+            success: (response) => {
+                let errorsBlock = $('.js_error');
 
-		let url = 'ajax.php',
-			data = {
-				'id' : $('[name=product-id]').val(),
-				'fio' : $('[name=fio]').val(),
-				'phone' : $('[name=phone]').val(),
-				'email' : $('[name=email]').val(),
-				'comment' : $('[name=comment]').val(),
-			};
+                if (response.errors) {
+                    errorsBlock.html('');
 
-		$.ajax({
-			url: url,
-			type: "POST",
-			data: data,
-			dataType: 'json',
-			success: (response) => {
-
-		      let errorsBlock = $('.js_error');
-
-		      if (response.errors) {
-		      	
-		      	errorsBlock.html('');
-
-		      	for (let key in response.errors) {
-		      		errorsBlock.append(response.errors[key] + '<br>');
-		      	}
-		      } else {
-		      	if (response.res == true) {
-		      		errorsBlock.html('Zamówienie zostało zrealizowane!');
-		      	}
-		      }
-			}
-		});
-	},
+                    for (let key in response.errors) {
+                        errorsBlock.append(response.errors[key] + '<br>');
+                    }
+                } else {
+                    if (response.res == true) {
+                        errorsBlock.html('Zamówienie zostało zrealizowane!');
+                    }
+                }
+            }
+        });
+    },
 };
+
 
 $(() => {
 	wideMenu.create();

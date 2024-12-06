@@ -3,28 +3,26 @@ spl_autoload_register(function ($class) {
     include 'classes/' . $class . '.php';
 });
 
-// Получаем данные из формы
 $enteredUsername = $_POST['username'];
 $enteredPassword = $_POST['password'];
 
 try {
-    //Create a PDO connection
     $db = PdoConnect::getInstance();
 
-    // Прямое встраивание переменной в SQL-запрос (предполагая, что $enteredUsername безопасно санитизировано)
-    $sql = "SELECT * FROM admins WHERE username = '$enteredUsername'";
-    $stmt = $db->PDO->query($sql);
+    $sql = "SELECT * FROM users WHERE username = ?";
+    $stmt = $db->PDO->prepare($sql);
+    $stmt->execute([$enteredUsername]);
+    $user = $stmt->fetch();
 
-    // Извлекаем администратора из результата запроса
-    $admin = $stmt->fetch();
-    if ($admin && ($admin['password'] == $enteredPassword)) {
-        // Аутентификация успешна
+    if ($user && $user['password'] == $enteredPassword) {
         session_start();
-        $_SESSION['admin'] = $admin;
+        $_SESSION['user'] = $user;
+        if ($user['role'] == 'admin') {
+            $_SESSION['admin'] = true;
+        }
         header('Location: index.php');
     } else {
-        // Неверные учетные данные
-        header('Location: login_form.php');
+        header('Location: login_form.php?error=invalid');
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

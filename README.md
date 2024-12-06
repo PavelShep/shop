@@ -11,16 +11,10 @@ It offers a user-friendly interface, product catalog. Administrators can also ma
 
 Key features of this project include:
 
-- Admin authentication
+- User registration and authentication
 - Product catalog with detailed descriptions
 - Responsive design with Bootstrap 4
 - Admin panel for product
-
-## Demo
-You can see a live demo of this page [here](https://newyearshop2023.000webhostapp.com/). <br>
-<b>WARNING!!!</b> <br>
-The website does not have an ssl certificate!!!
-
 
 ## Technologies Used
 

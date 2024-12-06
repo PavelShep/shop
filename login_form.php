@@ -76,8 +76,7 @@
         .login-dark form .btn-primary:active {
         transform:translateY(1px);
         }
-
-
+        
     </style>
 </head>
 <body>
